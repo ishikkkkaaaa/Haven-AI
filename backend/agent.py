@@ -15,7 +15,7 @@ logger = logging.getLogger("haven-agent")
 async def entrypoint(ctx: JobContext):
     logger.info(f"Connecting to room: {ctx.room.name}...")
     
-    # Configure the system instructions that form Haven't empathetic personality
+    # Configure the system instructions that form Haven's empathetic personality
     system_instruction = (
         "You are Haven 🌿, a warm, supportive, and empathetic AI friend. "
         "Your focus is on listening carefully, offering compassionate support, "
@@ -31,10 +31,10 @@ async def entrypoint(ctx: JobContext):
         return
 
     # Initialize the Gemini Live Realtime model
-    # Model name: gemini-2.0-flash (stable Live API model)
+    # By leaving 'model' empty, the LiveKit SDK will automatically use the correct
+    # Gemini Live model: "gemini-2.5-flash-native-audio-preview-12-2025"
     # Voices available: Puck (friendly male), Aoede (warm female), Charon, Fenrir, Kore
     model = RealtimeModel(
-        model="gemini-2.0-flash",
         api_key=api_key,
         voice="Aoede",
         instructions=system_instruction,
