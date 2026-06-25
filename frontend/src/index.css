@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Plus Jakarta Sans', 'Outfit', system-ui, -apple-system, sans-serif;
+  color-scheme: dark;
+  background-color: #030712; /* Dark slate tailwind gray-950 */
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% -20%, #1e1b4b 0%, #030712 60%);
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  background: rgba(17, 24, 39, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Morphing Fluid Shape */
+@keyframes morph {
+  0% {
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+  }
+  33% {
+    border-radius: 70% 30% 52% 48% / 60% 40% 60% 40%;
+  }
+  66% {
+    border-radius: 50% 50% 30% 70% / 50% 60% 40% 50%;
+  }
+  100% {
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+  }
+}
+
+.animate-morph {
+  animation: morph 12s ease-in-out infinite;
+}
+
+/* Color Shifting Auras */
+@keyframes pulse-listening {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 40px 10px rgba(20, 184, 166, 0.15), 0 0 80px 20px rgba(20, 184, 166, 0.05);
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 0 60px 25px rgba(20, 184, 166, 0.3), 0 0 100px 35px rgba(20, 184, 166, 0.1);
+  }
+}
+
+@keyframes pulse-thinking {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+    box-shadow: 0 0 40px 10px rgba(139, 92, 246, 0.15), 0 0 80px 20px rgba(236, 72, 153, 0.05);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.04);
+    box-shadow: 0 0 60px 20px rgba(236, 72, 153, 0.25), 0 0 100px 30px rgba(99, 102, 241, 0.15);
+  }
+}
+
+@keyframes pulse-speaking {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 50px 15px rgba(236, 72, 153, 0.25), 0 0 90px 25px rgba(239, 68, 68, 0.08);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 80px 35px rgba(236, 72, 153, 0.45), 0 0 120px 45px rgba(239, 68, 68, 0.15);
+  }
+}
+
+@keyframes pulse-connecting {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 0.9;
+  }
+}
+
+.aura-listening {
+  animation: morph 8s ease-in-out infinite, pulse-listening 4s ease-in-out infinite;
+  background: radial-gradient(circle at center, #0d9488 0%, #115e59 40%, transparent 70%);
+}
+
+.aura-thinking {
+  animation: morph 10s ease-in-out infinite, pulse-thinking 6s ease-in-out infinite;
+  background: radial-gradient(circle at center, #8b5cf6 0%, #ec4899 45%, #6366f1 80%, transparent 95%);
+}
+
+.aura-speaking {
+  animation: morph 6s ease-in-out infinite, pulse-speaking 2s ease-in-out infinite;
+  background: radial-gradient(circle at center, #ec4899 0%, #dc2626 50%, transparent 80%);
+}
+
+.aura-connecting {
+  animation: morph 12s ease-in-out infinite, pulse-connecting 3s ease-in-out infinite;
+  background: radial-gradient(circle at center, #4b5563 0%, #1f2937 50%, transparent 80%);
+}
+
+.aura-idle {
+  background: radial-gradient(circle at center, rgba(99, 102, 241, 0.15) 0%, transparent 75%);
+}
+
+/* Custom Scrollbar for modern UI feel */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}

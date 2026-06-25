@@ -1,0 +1,25 @@
+# Sensitive files
+.env
+.env.local
+.env.*.local
+backend/.env
+
+# Virtual environments
+venv/
+backend/venv/
+.venv/
+env/
+ENV/
+
+# Dependency directories
+node_modules/
+frontend/node_modules/
+
+# Build outputs
+dist/
+build/
+frontend/dist/
+
+# OS files
+.DS_Store
+Thumbs.db
