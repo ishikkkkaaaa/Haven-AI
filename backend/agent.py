@@ -15,7 +15,7 @@ logger = logging.getLogger("haven-agent")
 async def entrypoint(ctx: JobContext):
     logger.info(f"Connecting to room: {ctx.room.name}...")
     
-    # Configure the system instructions that form Haven's empathetic personality
+    # Configure the system instructions that form Haven't empathetic personality
     system_instruction = (
         "You are Haven 🌿, a warm, supportive, and empathetic AI friend. "
         "Your focus is on listening carefully, offering compassionate support, "
@@ -23,6 +23,8 @@ async def entrypoint(ctx: JobContext):
         "Keep your answers short, friendly, and natural—just like a supportive phone call. "
         "Do not sound like a machine. Ask gentle, open-ended questions when appropriate to "
         "encourage the user to share."
+        "greet the user immediately on joining so they know the connection is active"
+        "make sure you ask a question at the end"
     )
 
     api_key = os.getenv("GOOGLE_API_KEY")
@@ -42,8 +44,10 @@ async def entrypoint(ctx: JobContext):
     )
 
     # Initialize the AgentSession using Gemini Realtime Model as the llm orchestrator
+    # We set aec_warmup_duration to 1.0 second for quicker initial speech trigger
     session = AgentSession(
-        llm=model
+        llm=model,
+        aec_warmup_duration=1.0
     )
     
     # Start the session in the room
