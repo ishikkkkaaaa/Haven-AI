@@ -147,7 +147,7 @@ export default function App() {
             </div>
             <div className="w-full pt-4 border-t border-white/5">
               <p className="text-xs text-white/40 mb-4">
-                Please verify that your LiveKit and OpenAI API credentials are added to the root <code>.env</code> file and the backend FastAPI application is running.
+                Please verify that your LiveKit and Google Gemini API credentials are added to the root <code>.env</code> file and the backend FastAPI application is running.
               </p>
               <button
                 onClick={handleStartSession}
@@ -162,7 +162,7 @@ export default function App() {
 
       {/* Footer */}
       <footer className="w-full text-center py-4 text-[10px] text-white/20 uppercase tracking-widest mt-10">
-        Built with LiveKit & OpenAI Realtime
+        Built with LiveKit & Google Gemini Live
       </footer>
     </div>
   );

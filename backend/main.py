@@ -71,5 +71,5 @@ def health_check():
     return {
         "status": "healthy",
         "livekit_configured": bool(LIVEKIT_API_KEY and LIVEKIT_API_SECRET),
-        "openai_configured": bool(os.getenv("OPENAI_API_KEY"))
+        "gemini_configured": bool(os.getenv("GOOGLE_API_KEY"))
     }
