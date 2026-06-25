@@ -15,7 +15,8 @@ export default function App() {
     
     try {
       // Connect to the backend API
-      const response = await fetch('http://localhost:8000/api/token');
+      const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000';
+      const response = await fetch(`${backendUrl}/api/token`);
       if (!response.ok) {
         const errData = await response.json().catch(() => ({}));
         throw new Error(errData.detail || 'Could not retrieve LiveKit credentials from the server.');
