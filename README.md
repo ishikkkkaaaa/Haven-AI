@@ -10,7 +10,7 @@ Haven is designed to feel less like chatting with a traditional bot and more lik
 
 - **Frontend**: React + Vite + Tailwind CSS + LiveKit React Components SDK
 - **Backend**: FastAPI (Python) + LiveKit Agents SDK
-- **AI**: OpenAI Realtime API (via LiveKit's OpenAI realtime plugin)
+- **AI**: Gemini
 
 ---
 
