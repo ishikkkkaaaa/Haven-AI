@@ -1,6 +1,6 @@
 # Haven 🌿
 
-> A voice-first AI companion built with LiveKit and OpenAI's Realtime API.
+> A voice-first AI companion built with LiveKit and Gemini
 
 Haven is designed to feel less like chatting with a traditional bot and more like calling a supportive, empathetic friend. It focuses on low-latency, real-time voice conversations.
 
